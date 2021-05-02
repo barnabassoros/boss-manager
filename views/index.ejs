@@ -1,0 +1,43 @@
+<%- include('header') %>
+          <h1 style="text-align: center">Bosses</h1>
+          <div style="margin-left: 10px;margin-right: 10px;">
+
+          <table class="table table-hover table-striped table-dark ">
+            <thead>
+
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">Nickname</th>
+                <th scope="col">Wealth</th>
+                <th scope="col">&nbsp;</th>
+                <th scope="col">&nbsp;</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% bosses.forEach(function(oneBoss) { %>
+
+
+                
+              <tr>
+                
+                <td onclick="document.location='boss/profile/<%= oneBoss._id %>'" style="cursor: pointer;" scope="row"><%= oneBoss.name %></td>
+                <td onclick="document.location='boss/profile/<%= oneBoss._id %>'" style="cursor: pointer;"><%= oneBoss.age %></td>
+                <td onclick="document.location='boss/profile/<%= oneBoss._id %>'" style="cursor: pointer;"><%= oneBoss.nickName %></td>
+                <td onclick="document.location='boss/profile/<%= oneBoss._id %>'" style="cursor: pointer;">$<%= oneBoss.wealth %></td>
+                
+                <td onclick="document.location='/boss/edit/<%= oneBoss._id %>'" style="cursor: pointer;width:3%;"><span class="material-icons">
+                  edit
+                  </span></td>
+                  <td onclick="document.location='/boss/del/<%= oneBoss._id %>'" style="cursor: pointer;width:3%;">
+                  <span class="material-icons">
+                    delete
+                    </span>
+                  </td>
+              </tr>
+              <% }); %>
+            </tbody>
+          </table>
+          <a class="btn btn-primary btn-dark" href="/boss/new" role="button">Add boss</a>
+        </div>
+<%- include('footer') %>

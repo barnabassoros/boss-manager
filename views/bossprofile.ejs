@@ -1,0 +1,76 @@
+<%- include('header') %>
+<a class="btn btn-dark" href="/" role="button" style="margin-top:10px;margin-left:10px">Back</a>
+
+                <h1 style="text-align: center;"> <%= boss.name %></h1>
+              <div class="container">
+             
+              <div class="row">
+                <div class="col-md-4">
+                  <img src="/profilepic/<%=boss.picture%>" style="width: 300px;height: auto;" ></img>
+                </div>
+              <div class="col-md-8" id="list">
+              <div class="row">
+                <div class="col-3">
+                  Name
+                </div>
+                <div class="col-7">
+                    <%= boss.name %>
+                </div>
+              </div>
+              <hr/>
+              <div class="row">
+                <div class="col-3">
+                  Date of birth
+                </div>
+                <div class="col-7">
+                    <%= boss.dateOfBirth.toDateString() %>
+                </div>
+              </div>
+              <hr/>
+              <div class="row">
+                <div class="col-3">
+                  Nickname
+                </div>
+                <div class="col-7">
+                    <%= boss.nickName %>
+                </div>
+              </div>
+              <hr/>
+              <div class="row">
+                <div class="col-3">
+                  Wealth
+                </div>
+                <div class="col-7">
+                    $<%= boss.wealth %>
+                </div>
+              </div>
+            </div>
+
+          </div>
+         
+          <h2 style="text-align: center;">Employees</h2>
+
+          <table class="table table-hover table-striped table-dark ">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">Profession</th>
+                <th scope="col">Job succes rate</th>
+                <th scope="col">Loyalty</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% employeesForBoss.forEach(function(oneEmployee) { %>
+              <tr>
+                <td onclick="document.location='/employee/profile/<%= oneEmployee._id %>'" style="cursor: pointer;" scope="row"><%= oneEmployee.name %></td>
+                <td onclick="document.location='/employee/profile/<%= oneEmployee._id %>'" style="cursor: pointer;"><%= oneEmployee.age %></td>
+                <td onclick="document.location='/employee/profile/<%= oneEmployee._id %>'" style="cursor: pointer;"><%= oneEmployee.profession %></td>
+                <td onclick="document.location='/employee/profile/<%= oneEmployee._id %>'" style="cursor: pointer;"><%= oneEmployee.succesRate %> %</td>
+                <td onclick="document.location='/employee/profile/<%= oneEmployee._id %>'" style="cursor: pointer;"><%= oneEmployee.loyalty %> %</td>
+              </tr>
+              <% }); %>
+            </tbody>
+          </table>
+        </div>
+          <%- include('footer') %>

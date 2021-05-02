@@ -1,0 +1,70 @@
+<%- include('header') %>
+<a class="btn btn-dark" href="/employeelist" role="button" style="margin-top:10px;margin-left:10px">Back</a>
+<h1 style="text-align: center;"><%= employee.name %></h1>
+<div class="container"  id="formgr">
+     
+  
+
+    <div class="row">
+      <div class="col-4">
+        <img src="/profilepic/<%=employee.picture%>" style="width: 100%;height: auto;"></img>
+      </div>
+<div class="col-8" id="list">
+  <div class="row">
+    <div class="col-3">
+      Name
+    </div>
+    <div>
+      <%= employee.name %>
+    </div>
+  </div>
+  <hr/>
+  <div class="row">
+    <div class="col-3">
+      Date of birth
+    </div>
+    <div>
+      <%= employee.dateOfBirth.toDateString() %>
+    </div>
+  </div>
+  <hr/>
+  <div class="row">
+    <div class="col-3">
+      Employer
+    </div>
+    <div>
+      <a href="/boss/profile/<%=employee._employer._id%>">
+      <%= employee._employer.name %>
+     </a>
+    </div>
+  </div>
+  <hr/>
+  <div class="row">
+    <div class="col-3">
+      Profession
+    </div>
+    <div>
+      <%= employee.profession %>
+    </div>
+  </div>
+  <hr/>
+  <div class="row">
+    <div class="col-3">
+      Job succes rate
+    </div>
+    <div>
+      <%= employee.succesRate %> %
+    </div>
+  </div>
+  <hr/>
+  <div class="row">
+    <div class="col-3">
+      Loyalty
+    </div>
+    <div>
+      <%= employee.loyalty %> %
+    </div>
+  </div>
+</div>
+</div>
+<%- include('footer') %>

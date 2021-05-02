@@ -1,0 +1,22 @@
+{
+  "name": "boss-manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha 'test/**/*.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "age-by-birthdate": "^1.0.1",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.8",
+    "multer": "^1.4.2"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1"
+  }
+}

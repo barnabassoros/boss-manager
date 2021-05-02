@@ -1,0 +1,43 @@
+
+<%- include('header') %>
+<h1 style="text-align: center">Employees</h1>
+
+          <div style="margin-left: 10px;margin-right: 10px;">
+          <table class="table table-hover table-striped table-dark ">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">Employer</th>
+                <th scope="col">Profession</th>
+                <th scope="col">Job succes rate</th>
+                <th scope="col">Loyalty</th>
+                <th scope="col">&nbsp;</th>
+                <th scope="col">&nbsp;</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% employees.forEach(function(oneEmployee) { %>
+              <tr>
+                <td onclick="document.location='employee/profile/<%= oneEmployee._id %>'" style="cursor: pointer;" scope="row"><%= oneEmployee.name %></td>
+                <td onclick="document.location='employee/profile/<%= oneEmployee._id %>'" style="cursor: pointer;"><%= oneEmployee.age %></td>
+                <td onclick="document.location='employee/profile/<%= oneEmployee._id %>'" style="cursor: pointer;"><%= oneEmployee._employer.name %></td>
+                <td onclick="document.location='employee/profile/<%= oneEmployee._id %>'" style="cursor: pointer;"><%= oneEmployee.profession %></td>
+                <td onclick="document.location='employee/profile/<%= oneEmployee._id %>'" style="cursor: pointer;"><%= oneEmployee.succesRate %> %</td>
+                <td onclick="document.location='employee/profile/<%= oneEmployee._id %>'" style="cursor: pointer;"><%= oneEmployee.loyalty %> %</td>
+                <td onclick="document.location='employee/edit/<%= oneEmployee._id %>'" style="cursor: pointer;width:3%;"><span class="material-icons">
+                  edit
+                  </span></td>
+                  <td onclick="document.location='employee/del/<%= oneEmployee._id %>'" style="cursor: pointer;width:3%;">
+                  <span class="material-icons">
+                    delete
+                    </span>
+                  </td>
+              </tr>
+              <% }); %>
+            </tbody>
+          </table>
+          <a class="btn btn-primary btn-dark" href="employee/new" role="button">Add employee</a>
+        </div>
+
+        <%- include('footer') %>
